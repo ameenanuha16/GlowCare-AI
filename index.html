@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowCare AI | Your Personal Skincare Studio</title>
+  <meta name="description" content="Discover your skincare routine with GlowCare AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="announcement">
+    YOUR SKIN, YOUR ROUTINE, YOUR GLOW ✨
+  </div>
+
+  <header class="header">
+    <a href="#home" class="logo">glowcare<span> AI.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#quiz">Skin quiz</a>
+      <a href="#shop">Shop</a>
+      <a href="#photo">Photo preview</a>
+    </nav>
+    <a href="#bag" class="bag-link">My bag <span id="bag-count">0</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR PERSONAL SKINCARE STUDIO</p>
+        <h1>Find your glow.<br><em>Love your skin.</em></h1>
+        <p class="hero-description">
+          Discover a simple AM and PM skincare routine, explore trusted brands,
+          and shop products that fit your needs and budget.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#quiz">Find my routine ↗</a>
+          <a class="button secondary" href="#shop">Explore products</a>
+        </div>
+        <div class="hero-note">♡ Simple routines · Multiple brands · Budget-friendly options</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-center">
+          <span>YOUR DAILY</span>
+          <strong>Glow ritual</strong>
+          <span>SKINCARE, MADE SIMPLE</span>
+          <div class="hero-flower">✿</div>
+        </div>
+        <div class="floating-note note-one">♡ Skin first</div>
+        <div class="floating-note note-two">✦ Glow daily</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>01</span><strong>Personalised routines</strong><p>Based on your quiz answers</p></div>
+      <div><span>02</span><strong>Brands you know</strong><p>Indian and international picks</p></div>
+      <div><span>03</span><strong>Budget awareness</strong><p>See estimated basket totals</p></div>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+      <div class="section-heading">
+        <p class="eyebrow">LET'S GET TO KNOW YOUR SKIN</p>
+        <h2>Your skin, <em>your routine.</em></h2>
+        <p>Answer a few questions to get a suggested beginner routine.</p>
+      </div>
+
+      <form id="skin-quiz" class="quiz-card">
+        <div class="form-grid">
+          <label>What is your skin type?
+            <select id="skin-type" required>
+              <option value="oily">Oily</option>
+              <option value="dry">Dry</option>
+              <option value="combination">Combination</option>
+              <option value="normal">Normal</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </label>
+
+          <label>Your main concern
+            <select id="skin-concern" required>
+              <option value="acne">Acne and clogged pores</option>
+              <option value="marks">Dark marks and uneven tone</option>
+              <option value="dryness">Dryness and dehydration</option>
+              <option value="dullness">Dull-looking skin</option>
+              <option value="basic">Basic healthy routine</option>
+            </select>
+          </label>
+
+          <label>Your approximate budget (INR)
+            <select id="skin-budget">
+              <option value="1000">₹1,000</option>
+              <option value="1500">₹1,500</option>
+              <option value="2500">₹2,500</option>
+              <option value="5000">₹5,000</option>
+              <option value="10000">Flexible budget</option>
+            </select>
+          </label>
+
+          <label>Skin sensitivity
+            <select id="skin-sensitivity">
+              <option value="sensitive">Sensitive / easily irritated</option>
+              <option value="normal">Usually tolerates products</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </label>
+
+          <label>Preferred brand
+            <select id="preferred-brand">
+              <option value="any">No preference</option>
+              <option value="Minimalist">Minimalist</option>
+              <option value="Cetaphil">Cetaphil</option>
+              <option value="Simple">Simple</option>
+              <option value="CeraVe">CeraVe</option>
+              <option value="Foxtale">Foxtale</option>
+              <option value="Dot & Key">Dot & Key</option>
+              <option value="The Ordinary">The Ordinary</option>
+              <option value="Neutrogena">Neutrogena</option>
+            </select>
+          </label>
+
+          <label>Routine experience
+            <select id="skin-experience">
+              <option value="beginner">Beginner — keep it simple</option>
+              <option value="some">I already use skincare</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="routine-consent">
+          I understand these are general cosmetic suggestions, not a medical diagnosis.
+        </label>
+
+        <button class="button primary full-button" type="submit">Create my skincare routine ✨</button>
+      </form>
+
+      <div id="routine-result" class="routine-result hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-heading shop-heading">
+        <div>
+          <p class="eyebrow">THE GLOW EDIT</p>
+          <h2>Shop your <em>essentials.</em></h2>
+          <p>Explore skincare from Indian and international brands.</p>
+        </div>
+        <span class="estimate-tag">Prices are estimates</span>
+      </div>
+
+      <div class="filters">
+        <input id="search-input" type="search" placeholder="Search products or brands..." aria-label="Search products">
+        <select id="brand-filter" aria-label="Filter by brand">
+          <option value="all">All brands</option>
+        </select>
+        <select id="category-filter" aria-label="Filter by category">
+          <option value="all">All categories</option>
+          <option value="Cleanser">Cleansers</option>
+          <option value="Serum">Serums</option>
+          <option value="Moisturizer">Moisturisers</option>
+          <option value="Sunscreen">Sunscreens</option>
+        </select>
+        <select id="price-filter" aria-label="Filter by price">
+          <option value="all">Any price</option>
+          <option value="300">Under ₹300</option>
+          <option value="500">Under ₹500</option>
+          <option value="1000">Under ₹1,000</option>
+        </select>
+      </div>
+
+      <p id="product-count" class="product-count"></p>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section class="section photo-section" id="photo">
+      <div class="photo-card">
+        <div class="photo-copy">
+          <p class="eyebrow">YOUR PRIVATE PREVIEW</p>
+          <h2>Upload a photo.<br><em>Preview it here.</em></h2>
+          <p>Select an image to preview it in your browser. This demo does not diagnose skin or automatically analyse the image.</p>
+          <label for="skin-photo" class="button primary upload-button">Choose a photo</label>
+          <input id="skin-photo" type="file" accept="image/*" hidden>
+          <button id="remove-photo" class="text-button hidden" type="button">Remove photo</button>
+          <p class="small-note">Your selected photo is previewed locally in this page.</p>
+        </div>
+        <div class="photo-preview" id="photo-preview">
+          <div id="photo-placeholder">
+            <span class="preview-icon">♡</span>
+            <strong>Your skin diary</strong>
+            <p>Your image will appear here</p>
+          </div>
+          <img id="photo-image" class="hidden" alt="Your selected skin photo preview">
+        </div>
+      </div>
+    </section>
+
+    <section class="section bag-section" id="bag">
+      <div class="section-heading">
+        <p class="eyebrow">YOUR PERSONAL EDIT</p>
+        <h2>Your shopping <em>bag.</em></h2>
+        <p>Review your chosen products and their estimated cost.</p>
+      </div>
+
+      <div class="bag-layout">
+        <div id="bag-items" class="bag-items">
+          <div class="empty-bag">Your bag is waiting for a little glow ♡</div>
+        </div>
+        <aside class="bag-summary">
+          <p class="eyebrow">ORDER SUMMARY</p>
+          <div class="summary-line"><span>Items</span><strong id="summary-items">0</strong></div>
+          <div class="summary-line"><span>Estimated total</span><strong id="bag-total">₹0</strong></div>
+          <p class="small-note">This is a project demo. Prices are estimates and no payment or order is processed.</p>
+          <button id="copy-list" class="button primary full-button" type="button">Copy my shopping list</button>
+          <button id="clear-bag" class="button secondary full-button" type="button">Clear bag</button>
+          <p id="copy-status" class="small-note" aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">glowcare<span> AI.</span></a>
+    <p>Thoughtful skincare, one step at a time.</p>
+    <p class="small-note">Educational demo only. Check labels, patch-test new products, and consult a dermatologist for persistent skin concerns.</p>
+    <span>© 2026 GlowCare AI</span>
+  </footer>
+
+</body>
+</html>
